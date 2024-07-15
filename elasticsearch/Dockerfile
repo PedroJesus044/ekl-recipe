@@ -48,8 +48,8 @@ RUN curl --retry 10 -S -L --output /tmp/elasticsearch.tar.gz https://artifacts-n
 RUN tar -zxf /tmp/elasticsearch.tar.gz --strip-components=1
 
 # The distribution includes a `config` directory, no need to create it
-COPY config/elasticsearch.yml config/
-COPY config/log4j2.properties config/log4j2.docker.properties
+COPY elasticsearch/config/elasticsearch.yml config/
+COPY elasticsearch/config/log4j2.properties config/log4j2.docker.properties
 
 #  1. Configure the distribution for Docker
 #  2. Create required directory
